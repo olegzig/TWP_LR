@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <div class="container mx-0 px-0" id="nav-container">
+        <div class="container" id="nav-container">
             <!-- Панель навигации -->
             <nav class="navbar navbar-expand-md navbar-dark bg-dark d-flex justify-content-around">
                 <!-- меню сайта -->
@@ -21,27 +21,25 @@
                 </div>
                 <!-- меню сайта - конец -->
                 <!-- Информация пользователя -->
-                <div>
+                <div class="dropdown ml-4 nav-color d-flex">
                     <a href="#" class="navbar-text ml-auto">
                         00,0 руб <i class="fas fa-shopping-cart nav-color"></i> (0)
                     </a>
-                    <div class="dropdown ml-4 nav-color">
-                        <div class="dropdown-toggle" id="dropdownMenuButton"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/avatar.png" width="30"
-                                 alt="User" class="rounded" />
+                    <div class="dropdown-toggle" id="dropdownMenuButton"
+                         data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="images/avatar.png" width="30"
+                             alt="User" class="rounded" />
+                    </div>
+                    <div class="dropdown-menu"
+                         aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-item">
+                            <img src="images/avatar.png" width="50" alt="User"
+                                 class="rounded" />
+                            user@mail.ru
                         </div>
-                        <div class="dropdown-menu"
-                             aria-labelledby="dropdownMenuButton">
-                            <div class="dropdown-item">
-                                <img src="images/avatar.png" width="50" alt="User"
-                                     class="rounded" />
-                                user@mail.ru
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Мои товары</a>
-                            <a class="dropdown-item" href="#">Выход</a>
-                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Мои товары</a>
+                        <a class="dropdown-item" href="#">Выход</a>
                     </div>
                 </div>
                 <!-- Информация пользователя - конец -->
@@ -50,10 +48,54 @@
         </div><!-- container - конец -->
     </header><!-- header - конец -->
     <main class="container">
-        Содержимое страницы
+        <h1>Лабараторная работа 1</h1>
+        <h2>Список</h2>
+        <ol type="A">
+            <li>элемент 1 списка</li>
+            <li>элемент 2 списка</li>
+        </ol>
+        <h2>Форма</h2>
+        <form method="post">
+            <div class="d-flex mb-3">
+                <div class="w-25"></div>
+                <div class="d-flex flex-column">
+                    <div>
+                        <input type="checkbox" name="checkbox1"> Чек-бокс 1
+                    </div>
+                    <div>
+                        <input type="checkbox" name="checkbox2"> Чек-бокс 2
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex mb-3">
+                <div class="w-25"></div>
+                <div>
+                    <input type="radio" name="radioGroup" value="1"> Радио-1
+                    <input type="radio" name="radioGroup" value="2"> Радио-2
+                    <input type="radio" name="radioGroup" value="3"> Радио-3
+                </div>
+            </div>
+            <div class="d-flex mb-3">
+                <div class="d-flex flex-column w-25 justify-content-around">
+                    <label for="login">Логин:</label>
+                </div>
+                <div class="d-flex flex-column w-100">
+                    <input type="text" class="form-control" name="login" placeholder="Введите имя">
+                </div>
+            </div>
+            <div class="d-flex mb-3">
+                <div class="d-flex flex-column w-25 justify-content-around">
+                    <label for="password">Пароль:</label>
+                </div>
+                <div class="d-flex flex-column w-100">
+                    <input type="password" class="form-control" name="password" placeholder="Введите пароль">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
     </main>
     <footer class="fixed-bottom">
-        <div class="container">
+        <div class="container" id="footer-container">
             <div class="navbar navbar-dark navbar-expand-md bg-dark">
                 <div class="navbar-nav ml-auto">
                     <a class="nav-item nav-link" href="http://www.facebook.com">

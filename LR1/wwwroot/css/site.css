@@ -5,7 +5,12 @@ header, footer {
 .nav-color {
     color: rgba(255, 255, 255, 0.5)
 }
-
-#nav-container {
-    display: contents;
+#nav-container, #footer-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
 }
