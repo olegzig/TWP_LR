@@ -3,9 +3,7 @@
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 <div class="dropdown ml-4 nav-color d-flex">
-    <a asp-action="Index" asp-controller="Cart" class="navbar-text ml-auto">
-        00,0 руб <i class="fas fa-shopping-cart nav-color"></i> (0)
-    </a>
+    @await Component.InvokeAsync("Cart")
     <div class="dropdown-toggle" id="dropdownMenuButton"
          data-bs-toggle="dropdown" aria-expanded="false">
         <img src="images/avatar.png" width="30"
