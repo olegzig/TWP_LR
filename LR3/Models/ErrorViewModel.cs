@@ -1,4 +1,4 @@
-namespace LR2.Models
+namespace LR3.Models
 {
     public class ErrorViewModel
     {

@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using LR3.Models;
 
-namespace LR2.Data
+namespace LR3.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -9,5 +10,6 @@ namespace LR2.Data
             : base(options)
         {
         }
+        public DbSet<LR3.Models.MenuItem> MenuItem { get; set; } = default!;
     }
 }

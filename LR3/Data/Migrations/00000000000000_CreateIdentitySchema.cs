@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 using System;
 
-namespace LR2.Data.Migrations
+namespace LR3.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

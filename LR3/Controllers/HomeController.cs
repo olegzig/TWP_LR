@@ -1,11 +1,11 @@
-using LR2.Models;
+using LR3.Models;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 using System.Diagnostics;
 
-namespace LR2.Controllers
+namespace LR3.Controllers
 {
     public class HomeController : Controller
     {
