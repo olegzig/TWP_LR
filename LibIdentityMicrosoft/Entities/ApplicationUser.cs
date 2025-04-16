@@ -9,5 +9,7 @@ namespace LibIdentityMicrosoft.Entities
 {
     public class ApplicationUser : IdentityUser
     {
+        public byte[]? AvatarImage { get; set; }
+        public string? AvatarMimeType { get; set; } // MIME-тип изображения
     }
 }

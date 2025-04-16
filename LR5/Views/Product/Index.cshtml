@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Dish>
+@{
+    ViewData["Title"] = "Меню";
+}
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="~/images/@item.Image" class="card-img-top" alt="@item.DishName">
+                <div class="card-body">
+                    <h5 class="card-title">@item.DishName</h5>
+                    <p class="card-text">@item.Description</p>
+                    <span class="badge bg-secondary">@item.Calories калорий</span>
+                    <a href="#" class="btn btn-primary mt-2">
+                        <i class="fa fa-shopping-cart"></i> В корзину
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

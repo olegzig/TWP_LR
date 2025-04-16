@@ -13,8 +13,7 @@
 		<div class="dropdown-menu"
 			 aria-labelledby="dropdownMenuButton">
 			<div class="dropdown-item">
-				<img src="images/avatar.png" width="50" alt="User"
-					 class="rounded" />
+				<img src="@Url.Action("GetAvatar", "Image")" width="30" alt="User" class="rounded" />
 				@User.Identity.Name
 			</div>
 			<div class="dropdown-divider"></div>
