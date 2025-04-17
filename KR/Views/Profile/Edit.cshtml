@@ -1,0 +1,69 @@
+﻿@model ApplicationUser
+
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+
+<h2>Изменить профиль</h2>
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Current Avatar -->
+            <div class="form-group">
+                <label class="control-label">Current Avatar</label>
+                @if (Model.AvatarData != null)
+                {
+                    <img src="data:@Model.AvatarContentType;base64,@Convert.ToBase64String(Model.AvatarData)"
+                         class="img-thumbnail"
+                         style="max-width: 200px; max-height: 200px"
+                         alt="Current avatar" />
+                }
+                else
+                {
+                    <div class="text-muted">No avatar uploaded</div>
+                }
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <!-- Avatar Upload -->
+            <div class="form-group">
+                <label asp-for="AvatarData" class="control-label">Upload New Avatar</label>
+                <input type="file" name="avatar" class="form-control"
+                       accept=".png,.jpg,.jpeg" />
+                <small class="form-text text-muted">
+                    Max size: 2MB, Allowed formats: PNG, JPG
+                </small>
+                @if (ViewData.ModelState["Avatar"]?.Errors.Count > 0)
+                {
+                    <span class="text-danger">@ViewData.ModelState["Avatar"].Errors.First().ErrorMessage</span>
+                }
+            </div>
+
+            <!-- Basic Info -->
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" disabled />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" disabled />
+            </div>
+
+            <!-- Remove Avatar Checkbox -->
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="removeAvatar" name="removeAvatar" value="true" />
+                <label class="form-check-label" for="removeAvatar">Remove current avatar</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group mt-4">
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a asp-controller="Todo" asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
