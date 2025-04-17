@@ -13,7 +13,14 @@
                     <h5 class="card-title">@item.DishName</h5>
                     <p class="card-text">@item.Description</p>
                     <span class="badge bg-secondary">@item.Calories калорий</span>
-                    <a href="#" class="btn btn-primary mt-2">
+                    @{
+                        var request = ViewContext.HttpContext.Request;
+                        var returnUrl = request.Path + request.QueryString.ToUriComponent();
+                    }
+                    <a asp-action="Add" asp-controller="Cart"
+                       asp-route-id="@item.DishId"
+                       asp-route-returnUrl="@returnUrl"
+                       class="btn btn-primary mt-2">
                         <i class="fa fa-shopping-cart"></i> В корзину
                     </a>
                 </div>
