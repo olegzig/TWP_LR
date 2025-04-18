@@ -39,10 +39,10 @@ namespace KR.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Title,Description")] TodoItem todoItem)
         {
+            todoItem.UserId = _userManager.GetUserId(User);
+
             if (ModelState.IsValid)
             {
-                var user = await _userManager.GetUserAsync(User);
-                todoItem.UserId = user.Id;
                 _context.Add(todoItem);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
