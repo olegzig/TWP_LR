@@ -4,15 +4,15 @@
     ViewData["Title"] = "To Do";
 }
 
-h2>Мой список задач</h2>
+<h2>Мой список задач</h2>
 
 <table class="table">
     <thead>
         <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Created</th>
-            <th>Status</th>
+            <th>Заголовок</th>
+            <th>Описание</th>
+            <th>Создано</th>
+            <th>Статус</th>
         </tr>
     </thead>
     <tbody>
@@ -25,20 +25,20 @@ h2>Мой список задач</h2>
                 <td>
                     @if (item.IsCompleted)
                     {
-                        <span class="badge bg-success">Completed</span>
+                        <span class="badge bg-success">Завершено</span>
                     }
                     else
                     {
-                        <span class="badge bg-warning">Pending</span>
+                        <span class="badge bg-warning">Выполняется</span>
                     }
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Изменить</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Удалить</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-<a asp-action="Create" class="btn btn-primary">Add New</a>
+<a asp-action="Create" class="btn btn-primary">Добавить</a>
